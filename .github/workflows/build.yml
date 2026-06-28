@@ -32,8 +32,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build APK
-        # The 'yes |' command automatically accepts any prompts from the CLI
-        run: yes | flet build apk --release
+        # Added --verbose to see detailed logs in case of hidden build issues
+        run: yes | flet build apk --verbose
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
